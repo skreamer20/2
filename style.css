@@ -357,38 +357,40 @@ h2 {
 }
 
 @media (max-width: 768px) {
+    body {
+        font-size: 16px;
+    }
 
     /* Шапка */
     .header {
         flex-direction: column;
         align-items: flex-start;
+        gap: 15px;
         padding: 20px;
     }
 
     .nav {
         flex-direction: column;
         align-items: flex-start;
-        gap: 15px;
-        margin-top: 10px;
+        gap: 10px;
     }
 
     .nav a,
-    .nav button,
     .nav .sign-in {
         font-size: 18px;
     }
 
     /* Hero */
     .hero {
-        padding: 20px;
-        text-align: center;
-        align-items: center;
+        padding: 40px 20px;
         justify-content: center;
+        text-align: center;
+        height: auto;
     }
 
     .hero-content {
-        max-width: 100%;
         align-items: center;
+        max-width: 100%;
     }
 
     .hero h1 {
@@ -401,61 +403,100 @@ h2 {
 
     .btn-orange {
         width: 100%;
-        max-width: 200px;
+        max-width: 220px;
     }
 
     /* Карточки */
+    .cards-carousel {
+        padding: 40px 0;
+    }
+
     .articles-grid {
         flex-direction: column;
-        gap: 30px;
+        gap: 40px;
         padding: 0 20px;
     }
 
+    .card {
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+
     .card .caption {
-        bottom: 10px;
-        left: 20px;
         font-size: 18px;
+        left: 20px;
+        bottom: 20px;
+    }
+
+    .card .caption span {
+        font-size: 14px;
     }
 
     /* Subscribe */
+    .subscribe {
+        padding: 40px 20px;
+    }
+
     .subscribe p {
-        padding: 40px 0 20px;
+        padding: 20px 0;
         font-size: 20px;
+    }
+
+    .subscribe form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
     }
 
     .subscribe input {
         width: 100%;
         max-width: 300px;
+        height: 50px;
     }
 
     .btn-orangee {
         width: 100%;
-        max-width: 200px;
-        margin-top: 10px;
+        max-width: 160px;
+        height: 50px;
+        font-size: 16px;
         border-radius: 4px;
     }
 
     /* Footer */
     .footer {
-        padding: 20px;
-        height: auto;
+        padding: 40px 20px;
         background-size: cover;
+        height: auto;
     }
 
     .footer-content {
         flex-direction: column;
         align-items: flex-start;
-        padding: 20px 0;
         gap: 20px;
+        padding: 0;
+    }
+
+    .footer-links {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
     }
 
     .footer-links a {
         font-size: 18px;
-        margin: 5px 0;
+        margin: 0;
     }
 
-    .icon-circle {
-        margin-left: 0;
-        margin-right: 10px;
+    .socials {
+        display: flex;
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    .icon-circle img {
+        width: 24px;
+        height: 24px;
     }
 }
