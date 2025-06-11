@@ -1,0 +1,357 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* ОБЩЕЕ */
+body {
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* ШАПКА */
+.header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: transparent;
+    z-index: 10;
+    color: white;
+}
+
+/* ЛОГОТИП */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+/* НАВИГАЦИЯ */
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 23px;
+}
+
+.nav a:hover {
+    color: #e17b20;
+}
+
+.nav a:active {
+    color: #cd6326;
+}
+
+.nav .sign-in {
+    color: white;
+    padding: 6px 14px;
+    border: 1px solid #e17b20;
+    border-radius: 4px;
+    transition: background 0.3s;
+}
+
+.nav .sign-in:hover {
+    background: hsl(28, 96%, 43%);
+    color: white;
+}
+
+.nav .sign-in:active {
+    background-color: hsl(28, 64%, 32%);
+}
+
+.nav button {
+    background-color: rgb(25, 25, 25);
+    padding: 6px;
+    /* отступ вокруг иконки — сделает фон больше */
+    border-radius: 50%;
+    /* круглая форма */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s ease;
+    cursor: pointer;
+    border: none;
+}
+
+.icon-search {
+    background-color: rgb(25, 25, 25);
+    border: none;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    transition: color 0.2s ease;
+    stroke: white;
+}
+
+.icon-search:hover {
+    stroke: #e17b20;
+}
+
+.icon-search:active {
+    stroke: hsl(28, 64%, 32%);
+}
+
+.btn-signin {
+    background-color: #e6e6e6;
+    border: 1px solid #999;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.hero {
+    position: relative;
+    height: 100vh;
+    background: url('images/fox.jpg') center center / cover no-repeat;
+    display: flex;
+    align-items: center;
+    padding: 0 60px;
+    color: white;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    /* полупрозрачный затемнитель */
+    z-index: 1;
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 250px;
+    z-index: 2;
+    font-weight: 100;
+}
+
+.hero h1 {
+    font-size: 48px;
+    color: #cd6326;
+    font-weight: 100;
+}
+
+.hero p {
+    margin: 20px 0;
+    font-weight: 100;
+}
+
+.btn-orange {
+    background-color: #cd6326;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    cursor: pointer;
+    border-radius: 4px;
+    width: 160px;
+    height: 60px;
+    font-size: 23px;
+    font-weight: 200;
+}
+
+.btn-orangee {
+    background-color: #cd6326;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    cursor: pointer;
+    border-radius: 0px 4px 4px 0px;
+    width: 120px;
+    max-width: 120px;
+    height: 60px;
+    max-height: 60px;
+    font-size: 15px;
+    font-weight: 200;
+}
+
+.btn-orange:hover {
+    background-color: #e17b20;
+}
+
+.btn-orange:active {
+    background-color: hsl(28, 64%, 32%);
+}
+
+.cards-carousel {
+    text-align: center;
+    background-color: #e6e6e6;
+    padding: 60px 0;
+}
+
+h2 {
+    padding-bottom: 60px;
+    font-size: 48px;
+    font-weight: 200;
+    color: #333333;
+}
+
+.subheading {
+    padding-bottom: 120px;
+    font-size: 24px;
+    color: #999;
+}
+
+.carousel-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.articles-grid {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 60 px;
+    flex-wrap: wrap;
+}
+
+
+
+.card {
+    flex: 0 0 300px;
+    scroll-snap-align: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.card .caption {
+    position: absolute;
+    bottom: 40px;
+    left: 70px;
+    margin-right: 80px;
+    color: white;
+    font-size: 22px;
+    font-weight: 100;
+    text-shadow: 0 0 4px rgba(0, 0, 0, 0.6);
+    line-height: 1.4;
+}
+
+.card .caption span {
+    font-weight: normal;
+    width: 186px;
+    font-size: 15px;
+    display: block;
+    padding-top: 10px;
+}
+
+
+.arrow {
+    padding-left: 115px;
+    padding-right: 115px;
+    background-color: rgb(232, 231, 231);
+    border: none;
+    color: #666666;
+    font-size: 30px;
+    font-family: sans-serif;
+    cursor: pointer;
+    /*!!!!!!!!!!*/
+    transition: background 0.3s;
+}
+
+
+.arrow:hover {
+    color: #fff;
+}
+
+.subscribe {
+    background-color: #e6e6e6;
+    padding: 40px;
+    text-align: center;
+}
+
+.subscribe p {
+    padding-top: 239px;
+    padding-bottom: 59px;
+    font-size: 27px;
+    color: #333333;
+
+}
+
+.subscribe form {
+    margin-top: 20px;
+}
+
+.subscribe input {
+    padding: 10px;
+    border-color: #999;
+    width: 540px;
+    height: 60px;
+    margin-right: -5px;
+    background-color: #e6e6e6;
+    margin-bottom: 300px;
+}
+
+.footer {
+    background: url('images/footer.jpg') center center / cover no-repeat;
+    color: white;
+    padding: 40px 60px;
+    height: 359px;
+
+}
+
+.footer-content {
+    padding-top: 150px;
+    padding-left: 205px;
+    padding-right: 120px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.footer .logo {
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.footer-links a {
+    gap: 85px;
+    margin: 0 15px;
+    color: white;
+    text-decoration: none;
+    font-size: 23px;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+.footer .socials img {
+    width: 40px;
+    height: 40px;
+}
+
+.icon-circle {
+    background-color: white;
+    border-radius: 50%;
+    margin-left: 10px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon-circle img {
+    width: 5px;
+    height: 5px;
+}
