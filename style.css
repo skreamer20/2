@@ -32,6 +32,8 @@ body {
     gap: 10px;
     font-weight: bold;
     font-size: 20px;
+    color: white;
+    text-decoration: none;
 }
 
 /* НАВИГАЦИЯ */
@@ -41,19 +43,34 @@ body {
     gap: 30px;
 }
 
-.nav a {
+.nav a,
+.footer-links a {
     color: white;
     text-decoration: none;
     font-size: 23px;
+    position: relative;
+    transition: color 0.3s ease;
 }
 
-.nav a:hover {
+.nav a:hover,
+.footer-links a:hover {
     color: #e17b20;
 }
 
-.nav a:active {
-    color: #cd6326;
+/* Подчёркивание-появляшка */
+.footer-links a::after,
+.nav a::after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: white;
+    transition: width 0.3s ease-in-out;
 }
+
 
 .nav .sign-in {
     color: white;
@@ -210,68 +227,62 @@ h2 {
 }
 
 .carousel-container {
-    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.articles-grid {
-    display: flex;
-    justify-content: center;
-    gap: 60px;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 40px 60 px;
-    flex-wrap: wrap;
-}
-
-
-
-.card {
-    flex: 0 0 300px;
-    scroll-snap-align: center;
+    gap: 20px;
     overflow: hidden;
+    padding: 40px 60px;
     position: relative;
 }
 
-.card .caption {
+.carousel-track {
+    display: flex;
+    gap: 40px;
+    transition: transform 0.3s ease-in-out;
+    will-change: transform;
+}
+
+.carousel-container .card {
+    min-width: 300px;
+    flex: 0 0 auto;
+    position: relative;
+}
+
+.carousel-container img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.caption {
     position: absolute;
-    bottom: 40px;
-    left: 70px;
-    margin-right: 80px;
+    bottom: 20px;
+    left: 20px;
     color: white;
-    font-size: 22px;
-    font-weight: 100;
+    font-size: 20px;
     text-shadow: 0 0 4px rgba(0, 0, 0, 0.6);
-    line-height: 1.4;
 }
 
-.card .caption span {
-    font-weight: normal;
-    width: 186px;
-    font-size: 15px;
+.caption span {
+    font-size: 14px;
     display: block;
-    padding-top: 10px;
+    margin-top: 5px;
 }
-
 
 .arrow {
-    padding-left: 115px;
-    padding-right: 115px;
-    background-color: rgb(232, 231, 231);
+    background-color: white;
     border: none;
-    color: #666666;
-    font-size: 30px;
-    font-family: sans-serif;
+    padding: 10px 16px;
+    font-size: 24px;
     cursor: pointer;
-    /*!!!!!!!!!!*/
-    transition: background 0.3s;
+    border-radius: 50%;
+    color: #444;
+    transition: background-color 0.2s;
 }
 
-
 .arrow:hover {
-    color: #fff;
+    background-color: #cd6326;
+    color: white;
 }
 
 .subscribe {
@@ -333,8 +344,9 @@ h2 {
     font-size: 23px;
 }
 
-.footer-links a:hover {
-    text-decoration: underline;
+.footer-links a:hover::after,
+.nav a:hover::after {
+    width: 100%;
 }
 
 .footer .socials img {
@@ -346,14 +358,112 @@ h2 {
     background-color: white;
     border-radius: 50%;
     margin-left: 10px;
+    width: 50px;
+    height: 50px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    text-decoration: none;
 }
 
-.icon-circle img {
-    width: 5px;
-    height: 5px;
+.icon-circle i {
+    font-size: 24px;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+.icon-circle:hover {
+    opacity: 0.85;
+    transform: scale(1.05);
+}
+
+.icon-circle:hover i {
+    color: #cd6326;
+}
+
+.carousel-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 0 40px;
+    overflow: hidden;
+}
+
+.carousel-track-wrapper {
+    overflow: hidden;
+    width: 100%;
+    max-width: 1000px;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    gap: 40px;
+}
+
+.carousel-track .card {
+    flex: 0 0 300px;
+    position: relative;
+}
+
+.carousel-track img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.caption {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: white;
+    font-size: 20px;
+    text-shadow: 0 0 4px rgba(0, 0, 0, 0.6);
+}
+
+.caption span {
+    font-size: 14px;
+    display: block;
+    margin-top: 5px;
+}
+
+.carousel-button {
+    border: none;
+    background-color: #e6e6e6;
+    padding: 14px;
+    font-size: 26px;
+    color: #444;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s, color 0.3s;
+    z-index: 2;
+}
+
+.carousel-button:hover {
+    color: #cd6326;
+    transform: scale(1.1);
+}
+
+.carousel-button:active {
+    color: hsl(28, 64%, 32%);
+    transform: scale(0.95);
+}
+
+@media (max-width: 768px) {
+    .carousel-track {
+        gap: 20px;
+    }
+
+    .carousel-track .card {
+        flex: 0 0 80%;
+    }
+
+    .carousel-button {
+        padding: 10px;
+        font-size: 22px;
+    }
 }
 
 @media (max-width: 768px) {
@@ -454,6 +564,7 @@ h2 {
         width: 100%;
         max-width: 300px;
         height: 50px;
+        outline: none;
     }
 
     .btn-orangee {

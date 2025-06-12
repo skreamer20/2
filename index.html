@@ -7,6 +7,8 @@
     <title>WILDLIFE</title>
     <link rel="stylesheet" href="style.css" />
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 
 <body>
@@ -14,8 +16,10 @@
     <!-- Header -->
     <header class="header">
         <div class="logo">
-            <img src="images/logo.svg" alt="Wildlife Logo">
-            <span>WILDLIFE</span>
+            <a href="/" class="logo">
+                <img src="images/logo.svg" alt="Wildlife Logo">
+                <span>WILDLIFE</span>
+            </a>
         </div>
         <nav class="nav">
             <a href="#">Blog</a>
@@ -41,28 +45,43 @@
         </div>
     </section>
 
-    <!-- Latest Articles -->
     <section class="cards-carousel">
         <h2>Latest articles</h2>
         <p class="subheading">Breaking news from the wild</p>
-        <div class="carousel-container">
-            <button class="arrow left">&#10094;</button>
 
-            <div class="articles-grid" id="carousel">
-                <div class="card">
-                    <img src="images/deer.jpg" alt="Deer" />
-                    <div class="caption">Deer<br><span>Natural risk investigation</span></div>
-                </div>
-                <div class="card">
-                    <img src="images/squirel.jpg" alt="Squirrel" />
-                    <div class="caption">Squirrel<br><span>Kamikaze squirrel</span></div>
-                </div>
-                <div class="card">
-                    <img src="images/bird.jpg" alt="Bird" />
-                    <div class="caption">Bird<br><span>Birds fight club</span></div>
+        <div class="carousel-wrapper">
+            <button class="carousel-button left" onclick="moveSlide(-1)">&#10094;</button>
+
+            <div class="carousel-track-wrapper">
+                <div class="carousel-track" id="carousel">
+                    <div class="card">
+                        <img src="images/deer.jpg" alt="Deer" />
+                        <div class="caption">Deer<br><span>Natural risk investigation</span></div>
+                    </div>
+                    <div class="card">
+                        <img src="images/squirel.jpg" alt="Squirrel" />
+                        <div class="caption">Squirrel<br><span>Kamikaze squirrel</span></div>
+                    </div>
+                    <div class="card">
+                        <img src="images/bird.jpg" alt="Bird" />
+                        <div class="caption">Bird<br><span>Birds fight club</span></div>
+                    </div>
+                    <div class="card">
+                        <img src="images/deer.jpg" alt="Deer" />
+                        <div class="caption">Deer<br><span>Natural risk investigation</span></div>
+                    </div>
+                    <div class="card">
+                        <img src="images/squirel.jpg" alt="Squirrel" />
+                        <div class="caption">Squirrel<br><span>Kamikaze squirrel</span></div>
+                    </div>
+                    <div class="card">
+                        <img src="images/bird.jpg" alt="Bird" />
+                        <div class="caption">Bird<br><span>Birds fight club</span></div>
+                    </div>
                 </div>
             </div>
-            <button class="arrow right">&#10095;</button>
+
+            <button class="carousel-button right" onclick="moveSlide(1)">&#10095;</button>
         </div>
     </section>
 
@@ -79,8 +98,10 @@
     <footer class="footer">
         <div class="footer-content">
             <div class="logo">
-                <img src="images/logo.svg" alt="Wildlife Logo">
-                <span>WILDLIFE</span>
+                <a href="/" class="logo">
+                    <img src="images/logo.svg" alt="Wildlife Logo">
+                    <span>WILDLIFE</span>
+                </a>
             </div>
             <div class="footer-links">
                 <a href="#">Articles</a>
@@ -88,14 +109,32 @@
                 <a href="#">Learn more</a>
             </div>
             <div class="socials">
-                <div class="icon-circle"><img src="images/facebook.png" alt="facebook"></div>
-                <div class="icon-circle"><img src="images/insta.png" alt="instagram"></div>
-                <div class="icon-circle"><img src="images/pinterest.png" alt="pinterest"></div>
-                <div class="icon-circle"><img src="images/telegram.png" alt="telegram"></div>
+                <a href="#" class="icon-circle" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="icon-circle" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="icon-circle" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+                <a href="#" class="icon-circle" aria-label="Telegram"><i class="fab fa-telegram-plane"></i></a>
             </div>
         </div>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        let currentIndex = 0;
 
+        function moveSlide(direction) {
+            const track = document.getElementById('carousel');
+            const cards = track.children;
+            const cardWidth = cards[0].offsetWidth + 40; // ширина + gap
+            const visibleCards = Math.floor(track.parentElement.offsetWidth / cardWidth);
+            const maxIndex = cards.length - visibleCards;
+
+            currentIndex += direction;
+
+            if (currentIndex < 0) currentIndex = 0;
+            if (currentIndex > maxIndex) currentIndex = maxIndex;
+
+            track.style.transform = `translateX(${- currentIndex * cardWidth}px)`;
+        }
+    </script>
 </body>
 
 </html>
