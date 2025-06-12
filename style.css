@@ -452,158 +452,62 @@ h2 {
 }
 
 @media (max-width: 768px) {
-    body {
-        font-size: 16px;
-    }
-
-    /* 🔹 Header */
     .header {
         flex-direction: column;
         align-items: center;
-        gap: 15px;
         padding: 20px;
-        text-align: center;
+        background: rgba(0, 0, 0, 0.6);
+        /* если фон нужен */
+        gap: 10px;
+        z-index: 10;
+        position: relative;
     }
 
     .logo {
-        font-size: 24px;
+        flex-direction: row;
         justify-content: center;
+        align-items: center;
+        gap: 8px;
+        font-size: 22px;
+    }
+
+    .logo img {
+        width: 28px;
+        height: auto;
     }
 
     .nav {
         flex-direction: column;
         align-items: center;
-        gap: 10px;
+        gap: 12px;
+        width: 100%;
     }
 
     .nav a,
     .nav .sign-in {
         font-size: 18px;
+        padding: 6px 0;
     }
 
-    /* 🔹 Hero */
-    .hero {
-        padding: 40px 20px;
-        justify-content: center;
-        text-align: center;
-        height: auto;
+    .nav button {
+        background-color: rgb(25, 25, 25);
+        padding: 6px;
+        border-radius: 50%;
+        border: none;
     }
 
-    .hero-content {
-        align-items: center;
-        max-width: 100%;
+    .icon-search {
+        width: 24px;
+        height: 24px;
     }
 
-    .hero h1 {
-        font-size: 36px;
-    }
-
-    .hero p {
-        font-size: 16px;
-    }
-
-    .btn-orange {
-        width: 100%;
-        max-width: 220px;
-        height: 50px;
-        font-size: 18px;
-    }
-
-    /* 🔹 Слайдер / карточки */
-    .carousel-wrapper {
-        flex-direction: column;
-        padding: 0 10px;
-    }
-
-    .carousel-track-wrapper {
-        width: 100%;
-        overflow-x: scroll;
-    }
-
-    .carousel-track {
-        gap: 20px;
-    }
-
-    .card {
-        flex: 0 0 80%;
-        margin: 0 auto;
-    }
-
-    .caption {
-        font-size: 16px;
-        left: 10px;
-        bottom: 10px;
-    }
-
-    /* 🔹 Subscribe */
-    .subscribe {
-        padding: 40px 20px;
-    }
-
-    .subscribe p {
-        font-size: 20px;
-        padding: 10px 0;
-    }
-
-    .subscribe form {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .subscribe input {
-        width: 100%;
-        max-width: 320px;
-        height: 50px;
-    }
-
-    .btn-orangee {
+    .sign-in {
         width: 100%;
         max-width: 160px;
-        height: 50px;
-        font-size: 16px;
-        border-radius: 4px;
-    }
-
-    /* 🔹 Footer */
-    .footer {
-        padding: 40px 20px;
-        height: auto;
-    }
-
-    .footer-content {
-        flex-direction: column;
-        align-items: center;
         text-align: center;
-        gap: 20px;
-        padding: 0;
-    }
-
-    .footer-links {
-        display: flex;
-        flex-direction: column;
-        gap: 8px;
-    }
-
-    .footer-links a {
-        font-size: 18px;
-        margin: 0;
-    }
-
-    .socials {
-        display: flex;
-        gap: 10px;
-        justify-content: center;
-        margin-top: 10px;
-    }
-
-    .icon-circle {
-        width: 42px;
-        height: 42px;
-    }
-
-    .icon-circle i,
-    .icon-circle img {
-        width: 20px;
-        height: 20px;
+        border: 1px solid #e17b20;
+        padding: 8px;
+        border-radius: 5px;
+        color: white;
     }
 }
