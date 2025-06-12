@@ -452,36 +452,27 @@ h2 {
 }
 
 @media (max-width: 768px) {
-    .carousel-track {
-        gap: 20px;
-    }
-
-    .carousel-track .card {
-        flex: 0 0 80%;
-    }
-
-    .carousel-button {
-        padding: 10px;
-        font-size: 22px;
-    }
-}
-
-@media (max-width: 768px) {
     body {
         font-size: 16px;
     }
 
-    /* Шапка */
+    /* 🔹 Header */
     .header {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
         gap: 15px;
         padding: 20px;
+        text-align: center;
+    }
+
+    .logo {
+        font-size: 24px;
+        justify-content: center;
     }
 
     .nav {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
         gap: 10px;
     }
 
@@ -490,7 +481,7 @@ h2 {
         font-size: 18px;
     }
 
-    /* Hero */
+    /* 🔹 Hero */
     .hero {
         padding: 40px 20px;
         justify-content: center;
@@ -514,57 +505,55 @@ h2 {
     .btn-orange {
         width: 100%;
         max-width: 220px;
+        height: 50px;
+        font-size: 18px;
     }
 
-    /* Карточки */
-    .cards-carousel {
-        padding: 40px 0;
-    }
-
-    .articles-grid {
+    /* 🔹 Слайдер / карточки */
+    .carousel-wrapper {
         flex-direction: column;
-        gap: 40px;
-        padding: 0 20px;
+        padding: 0 10px;
+    }
+
+    .carousel-track-wrapper {
+        width: 100%;
+        overflow-x: scroll;
+    }
+
+    .carousel-track {
+        gap: 20px;
     }
 
     .card {
-        width: 100%;
-        max-width: 300px;
+        flex: 0 0 80%;
         margin: 0 auto;
     }
 
-    .card .caption {
-        font-size: 18px;
-        left: 20px;
-        bottom: 20px;
+    .caption {
+        font-size: 16px;
+        left: 10px;
+        bottom: 10px;
     }
 
-    .card .caption span {
-        font-size: 14px;
-    }
-
-    /* Subscribe */
+    /* 🔹 Subscribe */
     .subscribe {
         padding: 40px 20px;
     }
 
     .subscribe p {
-        padding: 20px 0;
         font-size: 20px;
+        padding: 10px 0;
     }
 
     .subscribe form {
-        display: flex;
         flex-direction: column;
-        align-items: center;
         gap: 10px;
     }
 
     .subscribe input {
         width: 100%;
-        max-width: 300px;
+        max-width: 320px;
         height: 50px;
-        outline: none;
     }
 
     .btn-orangee {
@@ -575,16 +564,16 @@ h2 {
         border-radius: 4px;
     }
 
-    /* Footer */
+    /* 🔹 Footer */
     .footer {
         padding: 40px 20px;
-        background-size: cover;
         height: auto;
     }
 
     .footer-content {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
+        text-align: center;
         gap: 20px;
         padding: 0;
     }
@@ -603,11 +592,18 @@ h2 {
     .socials {
         display: flex;
         gap: 10px;
+        justify-content: center;
         margin-top: 10px;
     }
 
+    .icon-circle {
+        width: 42px;
+        height: 42px;
+    }
+
+    .icon-circle i,
     .icon-circle img {
-        width: 24px;
-        height: 24px;
+        width: 20px;
+        height: 20px;
     }
 }
