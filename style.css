@@ -66,12 +66,13 @@ body {
     left: 0;
     width: 0%;
     height: 2px;
-    background-color: white;
+    background-color: #e17b20;
     transition: width 0.3s ease-in-out;
 }
 
 
 .nav .sign-in {
+    text-decoration: none;
     color: white;
     padding: 6px 14px;
     border: 1px solid #e17b20;
@@ -82,10 +83,15 @@ body {
 .nav .sign-in:hover {
     background: hsl(28, 96%, 43%);
     color: white;
+    text-decoration: none;
 }
 
 .nav .sign-in:active {
     background-color: hsl(28, 64%, 32%);
+}
+
+.nav .sign-in::after {
+    display: none !important;
 }
 
 .nav button {
@@ -247,19 +253,32 @@ h2 {
 
 .carousel-container img {
     width: 100%;
+    display: block;
     border-radius: 8px;
 }
 
-.caption {
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
-    color: white;
-    font-size: 20px;
-    text-shadow: 0 0 4px rgba(0, 0, 0, 0.6);
+.card {
+    position: relative;
+    overflow: hidden;
 }
 
-.caption span {
+.card .caption {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    width: 100%;
+    max-width: 100%;
+    padding: 0 10px;
+    color: white;
+    font-size: 22px;
+    font-weight: 100;
+    text-shadow: 0 0 4px rgba(0, 0, 0, 0.6);
+    line-height: 1.4;
+}
+
+.card .caption span {
     font-size: 14px;
     display: block;
     margin-top: 5px;
@@ -297,6 +316,7 @@ h2 {
 
 .subscribe form {
     margin-top: 20px;
+    margin-bottom: 300px;
 }
 
 .subscribe input {
@@ -306,7 +326,7 @@ h2 {
     height: 60px;
     margin-right: -5px;
     background-color: #e6e6e6;
-    margin-bottom: 300px;
+
 }
 
 .footer {
